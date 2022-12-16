@@ -2,7 +2,7 @@
 import * as ytMusic from 'node-youtube-music'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-export default async function handler (
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
@@ -11,11 +11,11 @@ export default async function handler (
 
     if (typeof list !== 'string') throw new Error('List debería ser un string')
 
-    const idPlayer = await ytMusic.searchPlaylists(list)
+    const [item] = await ytMusic.searchPlaylists(list) ?? []
 
-    if (!idPlayer[0].playlistId) throw new Error('idPlayer debería ser un string')
+    if (!item?.playlistId) throw new Error(`No existe una play list con el id ${list}`)
 
-    const resp = await ytMusic.listMusicsFromPlaylist(idPlayer[0].playlistId)
+    const resp = await ytMusic.listMusicsFromPlaylist(item.playlistId)
 
     res.status(200).json(resp)
   } catch (error) {
