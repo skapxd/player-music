@@ -26,7 +26,7 @@ export default async function handler(
     url.searchParams.set("id", id)
     url.searchParams.set("ext", "mp3")
 
-    const urlDownload = await fetch(url, options)
+    const urlDownload = await fetch(url.toString(), options)
       .then(resp => resp.json())
       .then(json => json.result.download_url)
 
