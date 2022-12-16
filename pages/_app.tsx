@@ -1,6 +1,8 @@
 import Head from 'next/head'
-import '../styles/globals.css'
+import "#/styles/normalize.css"
+import '#/styles/globals.css'
 import { AppProps } from 'next/app'
+import { BackgroundGradient } from '#/components/global/BackgroundGradient/BackgroundGradient'
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -32,7 +34,11 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <link rel="apple-touch-icon" href="/apple-icon.png"></link>
         <meta name="theme-color" content="#870000" />
       </Head>
-      <Component {...pageProps} />
+
+      <div className='appBox'>
+        <BackgroundGradient /> 
+        <Component {...pageProps} />
+      </div>
     </>
   )
 }
