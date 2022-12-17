@@ -1,3 +1,4 @@
+"use client";
 import { Header } from '#/components/global/Header/Header'
 import { PlaceholderImage } from '#/components/global/PlaceholderImage/PlaceholderImage'
 import { IconButton, Slider } from '@mui/material'
