@@ -1,0 +1,40 @@
+.box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    & .placeholderImageMusic {
+        margin: 10% auto;
+    }
+
+    .flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    & h1 {
+        color: #FFF;
+        font-size: 44px;
+        line-height: 1;
+        margin: 0 auto;
+    }
+
+    & p {
+        font-size: 18px;
+        color: #686868;
+        margin: 0 auto;
+    }
+
+    & .sliderBar{
+        align-self: center;
+        width: 80%;
+        & .flex {
+            display: flex;
+            justify-content: space-between;
+            & span {
+                font-size: 18px;
+                color: #686868
+            }
+        }
+    }
+}

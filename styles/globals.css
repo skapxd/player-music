@@ -5,6 +5,7 @@
 }
 
 .appBox {
+z-index: -1;
   /* Centered */
   background: var(--background);
   width: 100%;

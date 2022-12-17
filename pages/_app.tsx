@@ -37,7 +37,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
       <div className='appBox'>
         <BackgroundGradient /> 
-        <Component {...pageProps} />
+        <div style={{zIndex: 1}} >
+          <Component {...pageProps} />
+        </div>
       </div>
     </>
   )
