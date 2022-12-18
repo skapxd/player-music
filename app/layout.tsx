@@ -1,4 +1,4 @@
-import { BackgroundGradient } from "#/components/global/BackgroundGradient/BackgroundGradient"
+import { BackgroundGradient } from "#/components/BackgroundGradient/BackgroundGradient"
 
 export default function RootLayout({
   children,
@@ -32,7 +32,7 @@ export default function RootLayout({
           sizes="32x32"
         />
         <link rel="apple-touch-icon" href="/apple-icon.png"></link>
-        <meta name="theme-color" content="#76050a" />
+        <meta name="theme-color" content="#4C1325" />
       
       </head>
 

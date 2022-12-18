@@ -1,17 +1,23 @@
 import { IconButton } from '@mui/material';
+import Link from 'next/link';
+
+import { useRouter } from 'next/navigation';
 import { SVGProps } from 'react';
 import style from './Header.module.scss'
 
 export const Header = () => {
+  const router = useRouter()
   return (
     <div className={style.box}>
-          <IconButton size="large" >
-            <BurgerIcon />
-          </IconButton>
+      <IconButton size="large" >
+        <BurgerIcon />
+      </IconButton>
 
-          <IconButton size="large" >
-            <SearchIcon />
-          </IconButton>
+      <Link href={'/search'} className={style.searchIcon} >
+        <IconButton size="large" >
+          <SearchIcon />
+        </IconButton>
+      </Link>
     </div>
   )
 }

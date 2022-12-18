@@ -1,0 +1,42 @@
+.box {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    gap: 10px;
+    padding: 0 14px;
+
+    & .history {
+        width: 21px;
+    }
+
+    & .placeholder {
+        width: 50px;
+    }
+
+    & .col {
+        display: flex;
+        gap: 4px;
+        flex-direction: column;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+
+        & h2 {
+            margin: 0;
+            color: #fff;
+            font-size: 16px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        & p {
+            color: #978189;
+            margin: 0;
+            font-size: 14px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+    }
+}
