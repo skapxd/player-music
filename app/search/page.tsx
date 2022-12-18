@@ -46,7 +46,7 @@ export default function page() {
 
       <div className={Style.results} >
           {Array.from({length: 100}).map((e,i) => {
-            return <MusicItem key={i}/>
+            return <MusicItem showHistory key={i}/>
           })
 
           }
