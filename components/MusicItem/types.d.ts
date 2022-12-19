@@ -1,3 +1,6 @@
 export interface IMusicItem {
-  showHistory: boolean 
+  showHistory?: boolean 
+  title: string
+  album?: null | string
+  onClick?: () => void
 }

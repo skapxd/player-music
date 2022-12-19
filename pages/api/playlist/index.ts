@@ -11,15 +11,38 @@ export default async function handler(
 
     if (typeof list !== 'string') throw new Error('List debería ser un string')
 
-    const [item] = await ytMusic.searchPlaylists(list) ?? []
+    const { listMusic, type } = await getCriteria(list)
 
-    if (!item?.playlistId) throw new Error(`No existe una play list con el id ${list}`)
-
-    const resp = await ytMusic.listMusicsFromPlaylist(item.playlistId)
-
-    res.status(200).json(resp)
+    return res.status(200).json({
+      type,
+      list: listMusic
+    })
   } catch (error) {
     // @ts-ignore
     res.status(400).json({ error: error.message })
+  }
+}
+
+
+async function getCriteria(string: string) {
+
+  try {
+    const url = new URL(string)
+    const list = url.searchParams.get("list")
+    if (!list) throw new Error("")
+
+    const listMusic = await ytMusic.searchPlaylists(list) ?? []
+
+    // const listMusic = await ytMusic.listMusicsFromPlaylist(item.playlistId)
+
+    return {
+      listMusic, type: 'MusicsFromPlaylist'
+    }
+  } catch (error) {
+    const listMusic = await ytMusic.searchMusics(string) ?? []
+
+    return {
+      listMusic, type: 'listOfMusic'
+    }
   }
 }

@@ -1,3 +1,7 @@
+* {
+  user-select: none
+}
+
 :root {
   --primary-color: #76050a;
   --max-width: 390px;

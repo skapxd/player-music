@@ -9,7 +9,7 @@ export function Debounce(props: IDebounce) {
 
   let timerId: NodeJS.Timeout
 
-  return function executedFunction(...args: Array<any>) {
+  return async function executedFunction(...args: Array<any>) {
     // Evalúa que exista un setTimeOut
     // Lo eliminará en caso de existir
     if (timerId) clearTimeout(timerId);
@@ -18,7 +18,7 @@ export function Debounce(props: IDebounce) {
     if (immediate) return fn(...args);
 
     timerId = setTimeout(() => {
-    // @ts-ignore
+      // @ts-ignore
       fn(...args);
     }, delay);
   };

@@ -20,6 +20,7 @@
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
+        justify-content: flex-start;
 
         & h2 {
             margin: 0;

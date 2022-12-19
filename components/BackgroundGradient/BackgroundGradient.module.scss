@@ -1,9 +1,7 @@
 .box {
   z-index: 1;
-  position: absolute;
-  width: 100%;
+  position: fixed;
+  width: var(--max-width);
   height: 440px;
-  left: 0;
-  top: 0;
   background: linear-gradient(180deg, #870000 -106.91%, rgba(135, 0, 0, 0) 100%);
 }

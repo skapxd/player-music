@@ -4,19 +4,17 @@ import { IMusicItem } from "./types";
 
 export function MusicItem(props: IMusicItem){
 
-  const {showHistory} = props
+  const {showHistory, title, album, onClick} = props ?? {}
   return (
-    <ListItem button className={styles.box}>
+    <ListItem button className={styles.box}  onClick={onClick}>
 
       {showHistory && <HistoryIcon className={styles.history}/>}
       <PlaceholderImageIcon className={styles.placeholder}/>
 
       <div className={styles.col}>
-        <h2>Cancerbero - Un dia de barrio
-        asdasdas dasdasd12312323
-        </h2>
+        <h2>{title}</h2>
       
-        <p>MEKATRONIK</p>
+        <p>{album}</p>
       </div>
     </ListItem>
   )
