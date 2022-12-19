@@ -24,7 +24,9 @@ export const setHistoryLocalStorage = (value: Music) => {
   const removeDuplicateObject = (function () {
     const _ = listMusic.map(e => JSON.stringify(e))
 
-    return [...(new Set(_))].splice(0, 3)
+    return [...(new Set(_))]
+      .reverse()
+      .splice(0, 3)
   })()
 
   setLocalStorage(LocalStorageKey.searchHistory, removeDuplicateObject)
@@ -35,6 +37,5 @@ export const getHistoryLocalStorage = (): Array<Music> => {
   const data = getLocalStorage(LocalStorageKey.searchHistory) ?? []
 
   return data
-  .map((e: string) => JSON.parse(e))
-  .reverse()
+    .map((e: string) => JSON.parse(e))
 }
