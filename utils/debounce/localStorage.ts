@@ -31,6 +31,7 @@ export const setHistoryLocalStorage = (value: Music) => {
 }
 
 export const getHistoryLocalStorage = (): Array<Music> => {
+  if (typeof window === 'undefined') return []
   const data = getLocalStorage(LocalStorageKey.searchHistory) ?? []
 
   return data
