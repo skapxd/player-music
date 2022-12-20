@@ -6,6 +6,16 @@ const withPWA = require('next-pwa')({
 module.exports = withPWA({
   experimental: {
     appDir: true
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '*.googleusercontent.com',
+        port: '',
+        pathname: '/**'
+      }
+    ]
   }
   // config
 })

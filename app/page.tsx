@@ -8,7 +8,7 @@ import { OptionsIcon } from '#/components/OptionsIcon/OptionsIcon';
 import { PausePlayIcon } from '#/components/PausePlayIcon/PausePlayIcon';
 import { PlaceholderImage } from '#/components/PlaceholderImage/PlaceholderImage'
 import { ReplayIcon } from '#/components/ReplayIcon/ReplayIcon';
-import { IconButton, Slider } from '@mui/material'
+import { Button, IconButton, Slider } from '@mui/material'
 import Link from 'next/link'
 import styles from './index.module.scss'
 import BottomDrawer from '#/components/BottomDrawer/BottomDrawer';

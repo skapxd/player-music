@@ -1,49 +1,79 @@
+
 .search {
-    margin-top: 10px ;
+    z-index: 23;
     width: 100%;
     padding-bottom: 0;
     background: #0000;
     display: flex;
     flex-direction: column;
 
-    & .bar {
-        margin: 0 10px;
+    & .header {
+        padding-top: 10px;
+        z-index: 1;
         display: flex;
-        align-items: center;
-        height: 100%;
-        flex-direction: row;
+        position: fixed;
+        flex-direction: column;
+        width: var(--max-width);
+        background-color: rgba($color: #4c1325, $alpha: 0.5);
+        backdrop-filter: blur(10px);
 
-        & input {
-            outline: 0rem solid #0000;
+        & .bar {
+            // top: 0;
+            // margin: 0 10px;
+            display: flex;
+            align-items: center;
+            // height: 100%;
+            flex-direction: row;
+
+            & input {
+                padding: 12px 0;
+                outline: 0rem solid #0000;
+                width: 100%;
+                // line-height: 1.6;
+                margin-left: 10px;
+                color: #fff;
+                font-size: 16px;
+                border: none;
+                background-image: none;
+                background-color: transparent;
+                -webkit-box-shadow: none;
+                -moz-box-shadow: none;
+                box-shadow: none;
+
+                &::placeholder {
+                    color: #888
+                }
+            }
+        }
+
+        & .divider {
             width: 100%;
-            margin-left: 10px;
-            color: #fff;
-            font-size: 16px;
-            border: none;
-            background-image: none;
-            background-color: transparent;
-            -webkit-box-shadow: none;
-            -moz-box-shadow: none;
-            box-shadow: none;
-            &::placeholder{
-                color: #888
+            height: 1px;
+            background: #555;
+        }
+
+    }
+
+    & .body {
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+
+        & .results {
+            overflow-y: auto;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            &> :first-child {
+                margin-top: 20px;
+            }
+
+            &> :last-child {
+                margin-bottom: 100px;
             }
         }
     }
 
-    & .divider {
-        width: 100%;
-        height: 1px;
-        background: #555;
-    }
-
-    & .results {
-        // background: #000;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        & > :first-child{
-            margin-top: 20px;
-        }
-    }
 }

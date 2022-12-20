@@ -9,7 +9,7 @@
 }
 
 .appBox {
-z-index: -1;
+  z-index: -1;
   /* Centered */
   background: var(--background);
   width: 100%;
@@ -21,4 +21,13 @@ z-index: -1;
   min-height: calc(var(--vh, 1vh) * 100);
   display: flex;
   flex-direction: column;
+}
+
+
+.MuiLinearProgress-root {
+  background-color: #0000 !important;
+}
+
+.MuiLinearProgress-bar {
+  background-color: #E43F5A !important;
 }

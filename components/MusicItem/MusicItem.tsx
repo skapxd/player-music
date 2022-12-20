@@ -1,15 +1,24 @@
+import Image from 'next/image';
 import { ListItem } from "@mui/material";
 import styles from "./MusicItem.module.scss"
 import { IMusicItem } from "./types";
 
 export function MusicItem(props: IMusicItem){
 
-  const {showHistory, title, album, onClick} = props ?? {}
+  const {showHistory, title, album, onClick, thumbnailUrl} = props ?? {}
   return (
     <ListItem button className={styles.box}  onClick={onClick}>
 
       {showHistory && <HistoryIcon className={styles.history}/>}
-      <PlaceholderImageIcon className={styles.placeholder}/>
+      {/* <PlaceholderImageIcon className={styles.placeholder}/> */}
+      <Image 
+        alt="leeerob" 
+        // src={"https://lh3.googleusercontent.com/qO0fDnWvKsxQPBvJTZV-IA3qSfpJ82lvqMYjKWhSP1me8Ca3CZV6QOGUkVr_aXnhTQdoYyj-UO_qCLtB=w120-h120-l90-rj"} 
+        src={thumbnailUrl} 
+        className={styles.placeholder} 
+        width={50} 
+        height={50} 
+      />
 
       <div className={styles.col}>
         <h2>{title}</h2>

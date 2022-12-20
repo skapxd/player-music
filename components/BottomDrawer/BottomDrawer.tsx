@@ -42,6 +42,8 @@ export default function BottomDrawer(props: Props) {
           '.MuiDrawer-root > .MuiPaper-root': {
             height: `calc(85% - ${drawerBleeding}px)`,
             overflow: 'visible',
+            margin: "0 auto",
+            width: "var(--max-width)"
           },
         }}
       />

@@ -27,22 +27,23 @@ export default async function handler(
 async function getCriteria(string: string) {
 
   try {
-    const url = new URL(string)
+    const urlDecoded = decodeURIComponent(string)
+    const url = new URL(urlDecoded)
     const list = url.searchParams.get("list")
     if (!list) throw new Error("")
 
     const listMusic = await ytMusic.searchPlaylists(list) ?? []
 
-    // const listMusic = await ytMusic.listMusicsFromPlaylist(item.playlistId)
-
     return {
-      listMusic, type: 'MusicsFromPlaylist'
+      type: 'MusicsFromPlaylist',
+      listMusic, 
     }
   } catch (error) {
     const listMusic = await ytMusic.searchMusics(string) ?? []
 
     return {
-      listMusic, type: 'listOfMusic'
+      type: 'listOfMusic',
+      listMusic, 
     }
   }
 }

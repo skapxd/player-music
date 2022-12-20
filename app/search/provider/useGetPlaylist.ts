@@ -48,8 +48,13 @@ export const useGetPlaylist = () => {
     await debounce(props)
   }
 
+  const cleanStatePlayList = () => {
+    setStatePlayList(s => ({ playList: null, isLoading: false }))
+  }
+
   return {
     statePlayList,
     getPlayList,
+    cleanStatePlayList
   }
 }
