@@ -1,4 +1,4 @@
-export function BackNavigationIcon(props: React.SVGProps<SVGSVGElement>) {
+export function BackNavigationIcon (props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       width={24}
@@ -12,5 +12,5 @@ export function BackNavigationIcon(props: React.SVGProps<SVGSVGElement>) {
         fill="#888"
       />
     </svg>
-  );
+  )
 }

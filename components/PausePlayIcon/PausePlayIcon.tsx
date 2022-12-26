@@ -1,5 +1,5 @@
 
-export function PausePlayIcon(props: React.SVGProps<SVGSVGElement>) {
+export function PausePlayIcon (props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       width={36}
@@ -13,5 +13,5 @@ export function PausePlayIcon(props: React.SVGProps<SVGSVGElement>) {
         fill="#fff"
       />
     </svg>
-  );
+  )
 }

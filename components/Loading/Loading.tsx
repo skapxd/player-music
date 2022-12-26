@@ -7,7 +7,7 @@ interface Props {
 export function Loading (props: Props) {
   const { canShow } = props
 
-  if (canShow === false) return <></>
+  if (!canShow) return <></>
 
   return (
     <div className={style.loading}>

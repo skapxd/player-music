@@ -1,8 +1,8 @@
-"use client"
-import Link from 'next/link';
-import { SVGProps } from 'react';
+'use client'
+import Link from 'next/link'
+import { SVGProps } from 'react'
 import style from './Header.module.scss'
-import { IconButton } from '@mui/material';
+import { IconButton } from '@mui/material'
 
 export const Header = () => {
   return (
@@ -20,35 +20,32 @@ export const Header = () => {
   )
 }
 
-
-
-function BurgerIcon(props: SVGProps<SVGSVGElement>) {
+function BurgerIcon (props: SVGProps<SVGSVGElement>) {
   return (
-      <svg
-        width={24}
-        height={24}
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M3 12h18M3 6h18"
-          stroke="#999"
-          strokeWidth={1.5}
-          strokeLinecap="round"
-        />
-        <path
-          d="M3 18h18"
-          stroke="#999"
-          strokeWidth={1.5}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-  );
+    <svg
+      width={24}
+      height={24}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M3 12h18M3 6h18"
+        stroke="#999"
+        strokeWidth={1.5}
+        strokeLinecap="round"
+      />
+      <path
+        d="M3 18h18"
+        stroke="#999"
+        strokeWidth={1.5}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
 }
 
-
-function SearchIcon(props: SVGProps<SVGSVGElement>) {
+function SearchIcon (props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       width={24}
@@ -69,5 +66,5 @@ function SearchIcon(props: SVGProps<SVGSVGElement>) {
         strokeLinecap="round"
       />
     </svg>
-  );
+  )
 }

@@ -1,4 +1,4 @@
-export function AleatorioIcon(props: React.SVGProps<SVGSVGElement>) {
+export function AleatorioIcon (props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       width={25}
@@ -16,5 +16,5 @@ export function AleatorioIcon(props: React.SVGProps<SVGSVGElement>) {
         fill="#7D8498"
       />
     </svg>
-  );
+  )
 }

@@ -1,5 +1,5 @@
 
-export function HeartIcon(props: React.SVGProps<SVGSVGElement>) {
+export function HeartIcon (props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       width={24}
@@ -13,5 +13,5 @@ export function HeartIcon(props: React.SVGProps<SVGSVGElement>) {
         fill="#E43F5A"
       />
     </svg>
-  );
+  )
 }

@@ -2,12 +2,10 @@ export interface ReqGetPlayList {
   list: string
 }
 
-
 export interface RespGetPlayList {
-  type: "listOfMusic" | "MusicsFromPlaylist"
-  list: Array<List> | Array<Music>
+  type: 'listOfMusic' | 'MusicsFromPlaylist'
+  list: PlayList[] | Music[]
 }
-export type RespGetPlayList = Music[]
 
 export interface Music {
   youtubeId: string
@@ -29,7 +27,7 @@ export interface Duration {
   totalSeconds: number
 }
 
-export interface List {
+export interface PlayList {
   playlistId: string
   title: string
   totalSongs: number

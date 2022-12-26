@@ -1,4 +1,4 @@
-export function ReplayIcon(props: React.SVGProps<SVGSVGElement>) {
+export function ReplayIcon (props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       width={25}
@@ -12,5 +12,5 @@ export function ReplayIcon(props: React.SVGProps<SVGSVGElement>) {
         fill="#7D8498"
       />
     </svg>
-  );
+  )
 }

@@ -1,5 +1,5 @@
 
-export function BackPlayIcon(props: React.SVGProps<SVGSVGElement>) {
+export function BackPlayIcon (props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       width={49}
@@ -17,5 +17,5 @@ export function BackPlayIcon(props: React.SVGProps<SVGSVGElement>) {
         fill="#fff"
       />
     </svg>
-  );
+  )
 }

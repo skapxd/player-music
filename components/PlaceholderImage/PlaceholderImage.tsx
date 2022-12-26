@@ -1,6 +1,6 @@
-import { SVGProps } from "react";
+import { SVGProps } from 'react'
 
-export function PlaceholderImage(props: SVGProps<SVGSVGElement>) {
+export function PlaceholderImage (props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       width="1em"
@@ -19,5 +19,5 @@ export function PlaceholderImage(props: SVGProps<SVGSVGElement>) {
         </clipPath>
       </defs>
     </svg>
-  );
+  )
 }

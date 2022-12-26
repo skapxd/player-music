@@ -1,5 +1,7 @@
 {
   "cSpell.language": "es,en",
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.tabSize": 2,
   "editor.codeActionsOnSave": {
     "source.fixAll": true
   },

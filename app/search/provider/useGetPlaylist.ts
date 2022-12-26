@@ -1,32 +1,35 @@
-import { getPlaylistService } from './getPlaylist.service';
-import { useEffect, useState } from "react"
-import { ReqGetPlayList, RespGetPlayList } from "./types"
-import { useDebounce } from '#/utils/debounce/useDebounce';
+import { getPlaylistService } from './getPlaylist.service'
+import { useEffect, useState } from 'react'
+import { ReqGetPlayList, RespGetPlayList } from './types'
+import { useDebounce } from '#/utils/debounce/useDebounce'
 
 export const useGetPlaylist = () => {
   let isActiveHook = true
+
+  const initPlayList: null | RespGetPlayList = null
+
   const [statePlayList, setStatePlayList] = useState({
     isLoading: false,
-    playList: {} as null | RespGetPlayList
+    playList: initPlayList
   })
 
   const debounce = useDebounce({
     delay: 700,
-    // @ts-ignore
-    fn: async (value) => {
+    // @ts-expect-error
+    fn: async (value: any) => {
       try {
         const resp = await getPlaylistService(value)
 
         if (!isActiveHook) return
+
         setStatePlayList({
           isLoading: false,
-          // @ts-ignore
+          // @ts-expect-error
           playList: resp
         })
-
       } catch (error) {
-        // @ts-ignore
-        console.error("🚀 ~ Error Service: useGetPlaylist.ts:22 ~ getPlayList ~ error", error.message)
+        // @ts-expect-error
+        console.error('🚀 ~ Error Service: useGetPlaylist.ts:22 ~ getPlayList ~ error', error.message)
 
         setStatePlayList({
           isLoading: false,

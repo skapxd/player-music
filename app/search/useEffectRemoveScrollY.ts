@@ -1,16 +1,15 @@
-import { useEffect } from "react";
+import { useEffect } from 'react'
 
 export const useEffectRemoveScrollY = () => {
-
   useEffect(() => {
-    const html = document.querySelector("html")!
+    const html = document.querySelector('html')!
 
-    html.style.overflowY = "hidden"
-    document.body.style.overflowY = "hidden"
+    html.style.overflowY = 'hidden'
+    document.body.style.overflowY = 'hidden'
 
     return () => {
-      html.style.overflowY = "auto"
-      document.body.style.overflowY = "auto"
-    };
-  }, []);
+      html.style.overflowY = 'auto'
+      document.body.style.overflowY = 'auto'
+    }
+  }, [])
 }

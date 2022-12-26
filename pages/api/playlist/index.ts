@@ -2,7 +2,7 @@
 import * as ytMusic from 'node-youtube-music'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-export default async function handler(
+export default async function handler (
   req: NextApiRequest,
   res: NextApiResponse
 ) {
@@ -18,32 +18,30 @@ export default async function handler(
       list: listMusic
     })
   } catch (error) {
-    // @ts-ignore
+    // @ts-expect-error
     res.status(400).json({ error: error.message })
   }
 }
 
-
-async function getCriteria(string: string) {
-
+async function getCriteria (string: string) {
   try {
     const urlDecoded = decodeURIComponent(string)
     const url = new URL(urlDecoded)
-    const list = url.searchParams.get("list")
-    if (!list) throw new Error("")
+    const list = url.searchParams.get('list')
+    if (list === null) throw new Error('')
 
     const listMusic = await ytMusic.searchPlaylists(list) ?? []
 
     return {
       type: 'MusicsFromPlaylist',
-      listMusic, 
+      listMusic
     }
   } catch (error) {
     const listMusic = await ytMusic.searchMusics(string) ?? []
 
     return {
       type: 'listOfMusic',
-      listMusic, 
+      listMusic
     }
   }
 }

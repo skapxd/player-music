@@ -1,20 +1,20 @@
-import { useMemo } from "react";
-import { Debounce } from "./debounce";
-import { IUseDebounce } from "./types";
+import { useMemo } from 'react'
+import { Debounce } from './debounce'
+import { IUseDebounce } from './types'
 
 export const useDebounce = <T>(props: IUseDebounce<T>) => {
   const {
     dependencies = [],
-    fn = () => console.log("default function param of useDebounce"),
-    delay = 0,
-  } = props ?? {};
+    fn = async () => console.log('default function param of useDebounce'),
+    delay = 0
+  } = props ?? {}
 
   const genericDebounce = useMemo(() => {
     return Debounce({
       delay,
-      fn,
-    });
-  }, dependencies);
+      fn
+    })
+  }, dependencies)
 
-  return genericDebounce;
-};
+  return genericDebounce
+}

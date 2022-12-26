@@ -1,15 +1,14 @@
-"use client"
-import "#/styles/normalize.css"
+'use client'
+import '#/styles/normalize.css'
 import '#/styles/globals.css'
-import { BackgroundGradient } from "#/components/BackgroundGradient/BackgroundGradient"
-import { useEffect } from "react"
+import { BackgroundGradient } from '#/components/BackgroundGradient/BackgroundGradient'
+import { useEffect } from 'react'
 
-export default function RootLayout({
-  children,
+export default function RootLayout ({
+  children
 }: {
   children: React.ReactNode
 }) {
-
   useEffect(() => {
     if (typeof window === 'undefined') return
     const vh = window.innerHeight * 0.01
@@ -18,7 +17,7 @@ export default function RootLayout({
 
   return (
     <html>
-      <head >      
+      <head >
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta
@@ -44,13 +43,13 @@ export default function RootLayout({
         />
         <link rel="apple-touch-icon" href="/apple-icon.png"></link>
         <meta name="theme-color" content="#4C1325" />
-      
+
       </head>
 
       <body>
         <div className='appBox'>
-          <BackgroundGradient /> 
-          <div style={{zIndex: 1}}>{children}</div>
+          <BackgroundGradient />
+          <div style={{ zIndex: 1 }}>{children}</div>
         </div>
       </body>
     </html>

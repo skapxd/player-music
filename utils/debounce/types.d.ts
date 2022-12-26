@@ -1,9 +1,9 @@
 export interface IDebounce {
   delay?: number
   immediate?: boolean
-  fn: () => void
+  fn: () => Promise<void>
 }
 
 export interface IUseDebounce<T> extends IDebounce {
-  dependencies: Array<T>
+  dependencies: T[]
 }

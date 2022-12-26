@@ -1,11 +1,11 @@
-import { Music } from "#/app/search/provider/types"
+import { PlayList } from './../app/search/provider/types.d'
+import { Music } from '#/app/search/provider/types'
 
 export const enum LocalStorageKey {
-  searchHistory = "searchHistory"
+  searchHistory = 'searchHistory'
 }
 
 const setLocalStorage = (key: LocalStorageKey, value: any) => {
-
   window.localStorage.setItem(key, JSON.stringify(value))
 }
 
@@ -15,11 +15,10 @@ const getLocalStorage = (key: LocalStorageKey) => {
 }
 
 export const setHistoryLocalStorage = (value: Music) => {
-
   const currentListHistory = getLocalStorage(LocalStorageKey.searchHistory)
     ?.map((e: string) => JSON.parse(e)) ?? []
 
-  const listMusic: Array<Music> = [...currentListHistory, value]
+  const listMusic: Music[] = [...currentListHistory, value]
 
   const removeDuplicateObject = (function () {
     const _ = listMusic.map(e => JSON.stringify(e))
@@ -32,7 +31,7 @@ export const setHistoryLocalStorage = (value: Music) => {
   setLocalStorage(LocalStorageKey.searchHistory, removeDuplicateObject)
 }
 
-export const getHistoryLocalStorage = (): Array<Music> => {
+export const getHistoryLocalStorage = <T extends Music | PlayList>(): T[] => {
   if (typeof window === 'undefined') return []
   const data = getLocalStorage(LocalStorageKey.searchHistory) ?? []
 

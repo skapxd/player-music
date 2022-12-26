@@ -1,5 +1,5 @@
 
-export function NextPlayIcon(props: React.SVGProps<SVGSVGElement>) {
+export function NextPlayIcon (props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       width={49}
@@ -17,5 +17,5 @@ export function NextPlayIcon(props: React.SVGProps<SVGSVGElement>) {
         fill="#fff"
       />
     </svg>
-  );
+  )
 }
