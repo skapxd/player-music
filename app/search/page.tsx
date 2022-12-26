@@ -2,18 +2,18 @@
 import { BackNavigationIcon } from "#/components/BackNavigationIcon/BackNavigationIcon";
 import { Loading } from "#/components/Loading/Loading";
 import { MusicItem } from "#/components/MusicItem/MusicItem";
-import { setHistoryLocalStorage } from "#/utils/debounce/localStorage";
+import { setHistoryLocalStorage } from "#/utils/localStorage";
 import { IconButton } from "@mui/material";
 import { HistoryElements } from "./HistoryElements";
 import { useGetPlaylist } from "./provider/useGetPlaylist";
 import Style from "./search.module.scss"
-import { useRemoveScrollY } from "./useRemoveScrollY";
+import { useEffectRemoveScrollY } from "./useEffectRemoveScrollY";
 
 export default function page() {
 
   const {statePlayList, getPlayList, cleanStatePlayList} = useGetPlaylist()
 
-  useRemoveScrollY()
+  useEffectRemoveScrollY()
   
   return (
     <div className={Style.search}>
@@ -42,7 +42,6 @@ export default function page() {
       </div>
 
       <div className={Style.body}>
-        {/* <p>{JSON.stringify(size, null, 4)}</p> */}
         <div className={Style.results}>
           <HistoryElements show={!statePlayList.playList?.list}/>
 

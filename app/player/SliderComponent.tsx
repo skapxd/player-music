@@ -1,7 +1,7 @@
 "use client";
 import { Slider } from '@mui/material'
 import { useState } from 'react'
-import styles from './index.module.scss'
+import styles from './player.module.scss'
 
 export const SliderComponent = () => {
   const [time, setTime] = useState(0)

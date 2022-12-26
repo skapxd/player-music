@@ -1,10 +1,21 @@
+"use client"
+import "#/styles/normalize.css"
+import '#/styles/globals.css'
 import { BackgroundGradient } from "#/components/BackgroundGradient/BackgroundGradient"
+import { useEffect } from "react"
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    const vh = window.innerHeight * 0.01
+    document.documentElement.style.setProperty('--vh', `${vh}px`)
+  }, [])
+
   return (
     <html>
       <head >      

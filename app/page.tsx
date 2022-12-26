@@ -1,72 +1,26 @@
-"use client";
-import { AleatorioIcon } from '#/components/AleatorioIcon/AleatorioIcon';
-import { BackPlayIcon } from '#/components/BackPlayIcon/BackPlayIcon';
-import { Header } from '#/components/Header/Header'
-import { HeartIcon } from '#/components/HeartIcon/HeartIcon';
-import { NextPlayIcon } from '#/components/NextPlayIcon/NextPlayIcon';
-import { OptionsIcon } from '#/components/OptionsIcon/OptionsIcon';
-import { PausePlayIcon } from '#/components/PausePlayIcon/PausePlayIcon';
-import { PlaceholderImage } from '#/components/PlaceholderImage/PlaceholderImage'
-import { ReplayIcon } from '#/components/ReplayIcon/ReplayIcon';
-import { Button, IconButton, Slider } from '@mui/material'
-import Link from 'next/link'
-import styles from './index.module.scss'
-import BottomDrawer from '#/components/BottomDrawer/BottomDrawer';
-import { SliderComponent } from './SliderComponent';
+import { Header } from "#/components/Header/Header";
+import { PlaceholderImage } from "#/components/PlaceholderImage/PlaceholderImage";
+import style from "./index.module.scss"
 
-export default function Home() {
-
+export default function Page() {
   return (
-    <div className={styles.box}>
+    <div className={style.box}>
+      <Header /> 
 
-    <Header /> 
+      <div className={style.body}>
+        <h1>Play list</h1>
 
-    <PlaceholderImage width={188} height={137} className={styles.placeholderImageMusic}/>
-
-    <h1>Title</h1>
-
-    <p>Some Description</p>
-
-    <div className={styles.sliderBar}>
-
-      <SliderComponent />
-      
+    <div className={style.playlist}>
+      {Array.from({length: 10}).map((e,i) => {
+        return <div className={style.boxPlaylist} >
+          <PlaceholderImage /> 
+          </div>
+      })}
     </div>
 
-      <div className={styles.flex}>
-        <IconButton size="large">
-          <BackPlayIcon />
-        </IconButton>
+      
 
-        <IconButton size="large">
-          <PausePlayIcon />
-        </IconButton>
-
-        <IconButton size="large">
-          <NextPlayIcon />
-        </IconButton>
       </div>
-
-      <div className={styles.flex}>
-    
-        <IconButton size="large">
-          <HeartIcon /> 
-        </IconButton>
-
-        <IconButton size="large">
-          <AleatorioIcon />
-        </IconButton>
-
-        <IconButton size="large">
-          <ReplayIcon />
-        </IconButton>
-
-        <IconButton size="large">
-          <OptionsIcon />
-        </IconButton>
-      </div>
-
-      <BottomDrawer />
     </div>
   )
 }

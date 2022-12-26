@@ -43,7 +43,8 @@ export default function BottomDrawer(props: Props) {
             height: `calc(85% - ${drawerBleeding}px)`,
             overflow: 'visible',
             margin: "0 auto",
-            width: "var(--max-width)"
+            width:"100%",
+            maxWidth: "var(--max-width)"
           },
         }}
       />

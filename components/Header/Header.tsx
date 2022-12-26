@@ -1,12 +1,10 @@
-import { IconButton } from '@mui/material';
+"use client"
 import Link from 'next/link';
-
-import { useRouter } from 'next/navigation';
 import { SVGProps } from 'react';
 import style from './Header.module.scss'
+import { IconButton } from '@mui/material';
 
 export const Header = () => {
-  const router = useRouter()
   return (
     <div className={style.box}>
       <IconButton size="large" >

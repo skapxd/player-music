@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export const useRemoveScrollY = () => {
+export const useEffectRemoveScrollY = () => {
 
   useEffect(() => {
     const html = document.querySelector("html")!
