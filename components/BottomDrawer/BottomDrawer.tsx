@@ -1,4 +1,5 @@
 'use client'
+import { FixedSizeList, ListChildComponentProps } from 'react-window'
 import { Global } from '@emotion/react'
 import { styled } from '@mui/material/styles'
 import { grey } from '@mui/material/colors'
@@ -6,6 +7,8 @@ import Box from '@mui/material/Box'
 import SwipeableDrawer from '@mui/material/SwipeableDrawer'
 import { useState } from 'react'
 import { Props } from './types'
+import { MusicItem } from '../MusicItem/MusicItem'
+import style from './BottomDrawer.module.scss'
 
 const drawerBleeding = 56
 
@@ -23,8 +26,8 @@ const Puller = styled(Box)(({ theme }) => ({
   left: 'calc(50% - 15px)'
 }))
 
-export default function BottomDrawer (props: Props) {
-  const { window } = props
+export function BottomDrawer (props: Props) {
+  const { window, listMusic } = props
   const [open, setOpen] = useState(false)
 
   const toggleDrawer = (newOpen: boolean) => () => {
@@ -75,22 +78,39 @@ export default function BottomDrawer (props: Props) {
         >
           <Puller />
         </StyledBox>
-        <StyledBox
-          sx={{
-            bgcolor: '#2E4376',
-            px: 2,
-            pb: 2,
-            height: '100%',
-            overflow: 'auto',
-            display: 'flex',
-            flexDirection: 'column'
-          }}
+
+        <FixedSizeList
+          className={style.col}
+          height={2000}
+          width={'100%'}
+          itemSize={60}
+          itemCount={listMusic?.length ?? 0}
+          overscanCount={10}
+          itemData={listMusic ?? []}
         >
-          {Array.from({ length: 100 }).map((e, i) => {
-            return <div key={i} >{i}</div>
-          }) }
-        </StyledBox>
+          {renderRow}
+        </FixedSizeList>
       </SwipeableDrawer>
     </>
+  )
+}
+
+function renderRow (props: ListChildComponentProps) {
+  const { index, data, style } = props
+  const item = data[index]
+
+  return (
+    <div
+      style={style}
+    >
+      <MusicItem
+        key={index}
+        title={item?.title}
+        album={item?.duration?.label}
+        thumbnailUrl={item?.thumbnailUrl}
+        onClick={() => {
+        }}
+      />
+    </div>
   )
 }

@@ -1,0 +1,12 @@
+.col {
+  background-color: #2E4376;
+  height: 100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.col:last-child{
+  padding-bottom: 24px;
+}

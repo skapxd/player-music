@@ -13,10 +13,16 @@
     }
 
     & h1 {
-        color: #FFF;
-        font-size: 44px;
+        text-align: center;
+        color: #fff;
+        font-size: 22px;
         line-height: 1;
         margin: 0 auto;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        padding: 0 38px;
+        width: 100%;
     }
 
     & p {
@@ -25,7 +31,7 @@
         margin: 0 auto;
     }
 
-    & .sliderBar{
+    & .sliderBar {
         align-self: center;
         width: 80%;
         & .flex {
@@ -33,7 +39,7 @@
             justify-content: space-between;
             & span {
                 font-size: 18px;
-                color: #686868
+                color: #686868;
             }
         }
     }

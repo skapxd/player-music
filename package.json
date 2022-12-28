@@ -86,5 +86,8 @@
         }
       ]
     }
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard"
   }
 }

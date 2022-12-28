@@ -4,9 +4,9 @@ import styles from './MusicItem.module.scss'
 import { IMusicItem } from './types'
 
 export function MusicItem (props: IMusicItem) {
-  const { showHistory, title, album, onClick, thumbnailUrl } = props ?? {}
+  const { showHistory, title, album, onClick, thumbnailUrl, style } = props ?? {}
   return (
-    <ListItem button className={styles.box} onClick={onClick}>
+    <ListItem button className={styles.box} onClick={onClick} style={style}>
 
       {(showHistory ?? false) && <HistoryIcon className={styles.history}/>}
       {/* <PlaceholderImageIcon className={styles.placeholder}/> */}

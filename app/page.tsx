@@ -53,8 +53,8 @@ export default function Page (): JSX.Element {
         <div className={style.playlist}>
           {playListState.properties.map((e, i) => {
             return (
-              <div key={i} className={style.boxPlaylist} >
-                <Link href={ `/player?id=${e.playlistId}`}>
+              <div key={i} className={style.boxPlaylist}>
+                <Link href={ `/player?id=${e.playlistId}`} className={style.boxPlaylist} >
                   <img src={e.thumbnailUrl} alt="" />
                 </Link>
               </div>

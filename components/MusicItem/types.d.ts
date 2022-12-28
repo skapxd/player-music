@@ -4,4 +4,5 @@ export interface IMusicItem {
   album?: null | string
   thumbnailUrl: string
   onClick?: () => void
+  style?: React.CSSProperties
 }
